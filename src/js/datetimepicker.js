@@ -27,6 +27,8 @@
     .constant('dateTimePickerConfig', {
       dropdownSelector: null,
       minuteStep: 5,
+      firstHour: 8,
+      lastHour: 18,
       minView: 'minute',
       startView: 'day'
     })
@@ -50,7 +52,7 @@
       }
 
       var validateConfiguration = function validateConfiguration(configuration) {
-        var validOptions = ['startView', 'minView', 'minuteStep', 'dropdownSelector'];
+        var validOptions = ['startView', 'minView', 'minuteStep', 'dropdownSelector','firstHour','lastHour'];
 
         for (var prop in configuration) {
           //noinspection JSUnfilteredForInLoop
@@ -286,7 +288,9 @@
                 'dates': []
               };
 
-              for (var i = 0; i < 24; i += 1) {
+              
+              
+              for (var i = configuration.firstHour; i < configuration.lastHour; i += 1) {
                 var hourMoment = moment.utc(selectedDate).add(i, 'hours');
                 var dateValue = {
                   'dateValue': hourMoment.valueOf(),

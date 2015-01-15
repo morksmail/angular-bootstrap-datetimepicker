@@ -184,6 +184,19 @@ Number.  Default: 5
 
 The increment used to build the hour view. A button is created for each <code>minuteStep</code> minutes.
 
+
+### firstHour
+
+Number.  Default: 8
+
+The increment used to build the hour view. A button is created for each hour bewteen <code>firstHour</code> and <code>lastHour</code>
+
+### lastHour
+
+Number.  Default: 18
+
+The increment used to build the hour view. A button is created for each hour bewteen <code>firstHour</code> and <code>lastHour</code>
+
 ### dropdownSelector
 
 When used within a Bootstrap dropdown and jQuery, the selector specified in dropdownSelector will toggle the dropdown when a date/time is selected.
